@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript Event</title>
+    <style>
+        .box {
+            min-width: 200px;
+            min-height: 200px;
+            background: rgb(38, 33, 49);
+            border: 2px solide blue;
+            margin: 20px;
+
+        }
+
+        body {
+            padding: 20px;
+            background: yellowgreen;
+        }
+
+        td {
+            width: 95px;
+            height: 95px;
+            background: gray;
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="box" onclick="f(evt)">
+        <table>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+
+
+    <script>
+        const box = document.querySelector('.box')
+        box.addEventListener('click', g)
+        box.addEventListener('click', f)
+        box.addEventListener('click', h)
+
+        function f(evt) {
+            var x = evt.target
+            console.log("f" + x + " clicked", evt)
+            //evt.stopPropagation()
+        }
+
+        function g(evt) {
+            console.log("moved")
+        }
+
+        function h(evt) {
+            console.log("moved")
+        }
+        document.body.addEventListener('click', function (evt) {})
+    </script>
+</body>
+
+</html>
